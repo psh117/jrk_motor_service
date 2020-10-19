@@ -1,3 +1,4 @@
+string name
 float32 target_value
 ---
 bool is_succeed
