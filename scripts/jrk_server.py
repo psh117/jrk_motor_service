@@ -8,11 +8,11 @@ import os
 
 from jrk_motor_service.srv import JrkCmd, JrkCmdResponse, JrkCmdRequest
 
-max_bound = 0.27
+max_bound = 1.0
 exe_path = ''
 def handle_jrk_srv(req):
     
-    target = int(round((-req.target_value*max_bound) * 2047 + 2048))
+    target = int(round((req.target_value*max_bound) * 2047 + 2048))
     if target > 4096:
         target = 4095
     if target < 0:
